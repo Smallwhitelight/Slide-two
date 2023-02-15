@@ -1,0 +1,113 @@
+body{
+    margin: 0;
+    overflow: hidden;
+    height: 100vh;
+}
+.container{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.slide{
+    width: 150px;
+    height:75px;
+    border-radius: 50px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    overflow: hidden;
+
+}
+.trigger-white{
+    position: relative;
+    margin: 10px 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background-color: white;
+}
+.trigger-black{
+    position: relative;
+    margin: 10px 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background-color: black;
+    left:-150px
+}
+.whiteToblack{
+    background-size: 200% 100%;
+    background-image: linear-gradient(to right, white 50%, black 50%);
+    transition: 500ms;
+    background-position: -100% 0;
+}
+.blackTowhite{
+    background-size: 200% 100%;
+    background-image: linear-gradient(to left, black 50%, white 50%);
+    transition: 500ms;
+    background-position: 0 0;
+}
+.white{
+    background-color: white;
+    transition: 0.2s;
+}
+.next-w{
+    transform: translateX(170px);
+    transition: 0.4s ease-in-out;
+    background-color: black;
+}
+.next-b{
+    animation-name: slide-to-black;
+    animation-duration: 0.4s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-delay: 0.2s;
+    animation-direction: alternate;
+}
+.next-w-reverse{
+    background-color: white;
+    animation-name:slide-to-white;
+    animation-duration: 0.4s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-delay: 0.2s;
+}
+.next-b-reverse{
+    transform: translateX(-160px);
+    transition: 0.4s ease-in-out;
+    background-color: white;
+}
+@keyframes slide-to-black {
+    0%{
+        left:-140px
+    }
+    60%{
+        left:10px
+    }
+    80%{
+        left:-10px
+    }
+    100%{
+        left:10px
+    }
+}
+
+@keyframes slide-to-white {
+    0%{
+        left: 0px
+    }
+    60%{
+        left:-170px
+    }
+    80%{
+        left:-150px
+    }
+    100%{
+        left:-170px
+    }
+}
+
+
